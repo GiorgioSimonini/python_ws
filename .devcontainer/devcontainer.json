@@ -16,7 +16,7 @@
 	"workspaceFolder": "/home/pydev/${localWorkspaceFolderBasename}",
 
 	"mounts": [
-		{"source":"${localWorkspaceFolder}/.devcontainer/.commandhistory","target":"/commandhistory","type":"bind"}
+		{"source":"${localWorkspaceFolder}/.devcontainer","target":"/commandhistory","type":"bind"}
 	],
 	
 	"remoteUser": "pydev",
@@ -25,6 +25,7 @@
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
+	"postCreateCommand": "bash -c 'pip install -e ${HOME}/python_ws/robotics-toolbox-python'",
 	
 	// Configure tool-specific properties.
 	"customizations": {
