@@ -27,3 +27,15 @@ open the folder `python_ws` with `vscode` and click on `Rebuild and Reopen in Co
 
 ## Note
 Folder src/ into the python_ws folder is ignored on git, use submodules or other repositories to have source control.
+
+### To connect console to a jupiter notebook
+To connect to an existing notebook kernel from a console use
+
+	%connect_info
+
+on a code cell and execute
+ 
+ 	jupyter console --existing kernel-###.json
+
+on a terminal using the kernel info ```###```
+
