@@ -15,7 +15,6 @@ RUN apt-get update \
 ARG USERNAME=pydev
 ARG USER_UID=1000
 ARG USER_GID=${USER_UID}
-RUN echo args are ${USER_GID} ${USERNAME}
 RUN groupadd --gid ${USER_GID} ${USERNAME} \
     && useradd --uid ${USER_UID} --gid ${USER_GID} -m ${USERNAME} \
     && apt-get update \
@@ -25,8 +24,6 @@ RUN groupadd --gid ${USER_GID} ${USERNAME} \
 
 ENV HOME /home/${USERNAME} 
 
-# workspace setup, lo fa da solo quando monta da devcontainer
-# RUN mkdir -p ${HOME}/py_ws/
 
 # Enable bash history so it can be mounted and become persistent
 RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/commandhistory/.bash_history" \
