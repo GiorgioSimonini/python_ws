@@ -41,8 +41,11 @@ USER ${USERNAME}
 
 RUN mkdir ${HOME}/init 
 COPY .devcontainer/requirements.txt ${HOME}/init/requirements
+RUN touch ${HOME}/init/requirements_local
+COPY .devcontainer/requirements_local.tx[t] ${HOME}/init/requirements_local
 
 RUN pip -q install pip --upgrade \
-    && pip3 install -r ${HOME}/init/requirements
+    && pip3 install -r ${HOME}/init/requirements \
+	&& pip3 install -r ${HOME}/init/requirements_local
 
 WORKDIR ${HOME}

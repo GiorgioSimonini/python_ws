@@ -1,3 +1,4 @@
 src/
 .devcontainer/.bash_history
 .devcontainer/.commandhistory/.bash_history
+.devcontainer/requirements_local.txt
